@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PortalPath – MyChart & Patient Portal Guide</title>
+  <meta name="description" content="PortalPath provides step-by-step guidance on how to access and navigate online patient portals including MyChart, account setup, and portal features."/>
+  <meta name="keywords" content="mychart, mychart portal, patient portal, mychart account, mychart access, online health portal, portal access guide"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0b1f3a; --blue: #1459a8; --sky: #3b82f6; --teal: #0ea5e9;
+      --light: #f0f6ff; --white: #ffffff; --text: #1e2d3d; --muted: #5a7390; --border: #dce8f5;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); text-decoration: none; }
+    .logo span { color: var(--sky); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sky); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; }
+    .nav-cta:hover { background: var(--sky) !important; }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #133a6e 60%, #1a5fa8 100%);
+      color: var(--white); padding: 100px 5% 90px; position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { max-width: 760px; position: relative; }
+    .hero-badge {
+      display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: #90c9f9; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.4rem;
+    }
+    .hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.15; margin-bottom: 1.3rem; }
+    .hero h1 em { color: #7ec8f4; font-style: italic; }
+    .hero p { font-size: 1.1rem; color: rgba(255,255,255,0.82); max-width: 600px; margin-bottom: 2.2rem; }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .btn-primary {
+      background: var(--sky); color: var(--white); padding: 0.8rem 2rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      transition: background 0.2s, transform 0.15s; display: inline-block;
+    }
+    .btn-primary:hover { background: var(--teal); transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; color: var(--white); padding: 0.8rem 2rem; border-radius: 8px;
+      text-decoration: none; font-weight: 600; font-size: 0.95rem;
+      border: 2px solid rgba(255,255,255,0.4); transition: border-color 0.2s, background 0.2s; display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
+
+    .trust-bar {
+      background: var(--light); border-bottom: 1px solid var(--border);
+      padding: 1rem 5%; display: flex; align-items: center; justify-content: center; gap: 2.5rem; flex-wrap: wrap;
+    }
+    .trust-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+    .trust-item svg { width: 16px; height: 16px; color: var(--sky); }
+
+    section { padding: 80px 5%; }
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky); margin-bottom: 0.6rem; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
+    .section-sub { color: var(--muted); font-size: 1.05rem; max-width: 580px; margin-bottom: 3rem; }
+
+    .services { background: var(--white); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5rem; }
+    .card {
+      background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2rem;
+      transition: box-shadow 0.25s, transform 0.2s; position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--sky), var(--teal)); opacity: 0; transition: opacity 0.25s;
+    }
+    .card:hover { box-shadow: 0 8px 32px rgba(20,89,168,0.12); transform: translateY(-3px); }
+    .card:hover::before { opacity: 1; }
+    .card-icon { width: 48px; height: 48px; background: var(--light); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.2rem; font-size: 1.4rem; }
+    .card h3 { font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.6rem; }
+    .card p { font-size: 0.92rem; color: var(--muted); }
+
+    .how { background: var(--light); }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+    .step { text-align: center; }
+    .step-num {
+      width: 52px; height: 52px; background: var(--blue); color: var(--white); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif; font-size: 1.4rem; margin: 0 auto 1rem;
+    }
+    .step h3 { font-size: 1.05rem; color: var(--navy); margin-bottom: 0.4rem; font-weight: 600; }
+    .step p { font-size: 0.9rem; color: var(--muted); }
+
+    .keyword-section { background: var(--navy); color: var(--white); }
+    .keyword-section h2 { color: var(--white); }
+    .keyword-section .section-label { color: #7ec8f4; }
+    .keyword-section .section-sub { color: rgba(255,255,255,0.65); }
+    .keyword-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .kw-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 1.4rem 1.6rem; }
+    .kw-card h4 { font-size: 1rem; color: #90c9f9; margin-bottom: 0.4rem; font-weight: 600; }
+    .kw-card p { font-size: 0.88rem; color: rgba(255,255,255,0.65); }
+
+    .disclaimer-section { background: var(--white); }
+    .disclaimer {
+      background: #fff8e6; border: 1px solid #f5d97a; border-radius: 10px;
+      padding: 1.6rem 2rem; max-width: 820px; margin: 0 auto;
+    }
+    .disclaimer strong { color: #7a5500; font-size: 0.95rem; display: block; margin-bottom: 0.4rem; }
+    .disclaimer p { font-size: 0.88rem; color: #7a5500; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 3rem 5%; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .footer-brand .logo { color: var(--white); font-size: 1.3rem; display: block; margin-bottom: 0.6rem; }
+    .footer-brand p { font-size: 0.85rem; max-width: 260px; }
+    .footer-links h4 { color: var(--white); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 0.4rem; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--sky); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2.5rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; }
+
+    @media (max-width: 650px) { .nav-links { display: none; } .hero { padding: 70px 5% 60px; } }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Portal<span>Path</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="guide.html">Guide</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="guide.html" class="nav-cta">Get Help</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="hero-badge">&#128274; Patient Portal Guidance</span>
+    <h1>Your Complete Guide to <em>MyChart</em> &amp; Online Patient Portals</h1>
+    <p>PortalPath helps everyday users understand how to access, navigate, and use online patient portals including MyChart — step by step, in plain language.</p>
+    <div class="hero-btns">
+      <a href="guide.html" class="btn-primary">View Access Guide</a>
+      <a href="about.html" class="btn-outline">About Us</a>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    Independent &amp; Informational
+  </div>
+  <div class="trust-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+    No Account Access Required
+  </div>
+  <div class="trust-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+    General Information Only
+  </div>
+  <div class="trust-item">
+    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+    Plain Language Explanations
+  </div>
+</div>
+
+<section class="services">
+  <div class="section-label">What We Cover</div>
+  <h2>MyChart &amp; Portal Topics We Explain</h2>
+  <p class="section-sub">We break down common questions people have when trying to access or use MyChart or any online patient portal for the first time.</p>
+  <div class="services-grid">
+    <div class="card">
+      <div class="card-icon">🔑</div>
+      <h3>MyChart Portal Overview</h3>
+      <p>General guidance on how MyChart works, what the access screen looks like, and how users typically enter their credentials to get in.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔄</div>
+      <h3>Account Recovery Steps</h3>
+      <p>An overview of the common methods MyChart and similar portals use to help users recover a forgotten username or regain access.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🗺️</div>
+      <h3>Portal Navigation Help</h3>
+      <p>Plain-language explanations of how dashboards and main sections in MyChart are typically laid out and organized.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📋</div>
+      <h3>Understanding MyChart Features</h3>
+      <p>Educational content on what features are commonly available inside MyChart — such as viewing summaries, scheduling, and messaging.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🏥</div>
+      <h3>Platform Awareness</h3>
+      <p>Background on how MyChart is used by healthcare organizations to provide patients with online access to their records and appointments.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📞</div>
+      <h3>Where to Get Real Help</h3>
+      <p>Guidance on how to identify and contact the right official support channels when you need direct technical assistance with your MyChart account.</p>
+    </div>
+  </div>
+</section>
+
+<section class="how">
+  <div class="section-label">How It Works</div>
+  <h2>Getting Started Is Simple</h2>
+  <p class="section-sub">PortalPath is a free informational resource. No sign-up, no account, no personal data needed.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Browse Our Guide</h3>
+      <p>Visit our Guide page for step-by-step explanations of MyChart and patient portal access.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Find Your Topic</h3>
+      <p>Use the section that matches your question — MyChart access, recovery, features, or navigation.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Follow the Steps</h3>
+      <p>Each topic is explained in plain, clear language designed for all users regardless of tech experience.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Contact Support</h3>
+      <p>For direct account help, we point you to the right official MyChart support channels.</p>
+    </div>
+  </div>
+</section>
+
+<section class="keyword-section">
+  <div class="section-label">Common Search Topics</div>
+  <h2>Topics People Frequently Search</h2>
+  <p class="section-sub">Our content is organized around the most common questions users have about MyChart and patient portals.</p>
+  <div class="keyword-grid">
+    <div class="kw-card">
+      <h4>MyChart</h4>
+      <p>Step-by-step explanation of how MyChart works and what to expect when accessing your patient portal.</p>
+    </div>
+    <div class="kw-card">
+      <h4>MyChart Account Setup</h4>
+      <p>Overview of how new MyChart accounts are typically activated after receiving an invitation from a provider.</p>
+    </div>
+    <div class="kw-card">
+      <h4>MyChart Account Recovery</h4>
+      <p>Common steps MyChart uses to let users reset or recover their access when they are unable to sign in.</p>
+    </div>
+    <div class="kw-card">
+      <h4>MyChart Access Issues</h4>
+      <p>Common reasons a MyChart session may not load and general troubleshooting approaches most portals support.</p>
+    </div>
+    <div class="kw-card">
+      <h4>Patient Portal Access</h4>
+      <p>General information about how online patient portals like MyChart are accessed from browsers and mobile devices.</p>
+    </div>
+    <div class="kw-card">
+      <h4>MyChart Features Guide</h4>
+      <p>An overview of the features typically available once you are signed into your MyChart-powered portal.</p>
+    </div>
+  </div>
+</section>
+
+<section class="disclaimer-section">
+  <div class="disclaimer">
+    <strong>⚠️ Important Notice</strong>
+    <p>PortalPath is an <strong>independent informational website</strong> and is <strong>not affiliated with, endorsed by, or operated by MyChart, Epic Systems, or any healthcare organization</strong>. We do not provide direct account access, technical support, or handle any personal, financial, or health-related data. All content on this site is for general informational purposes only.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">Portal<span style="color:#7ec8f4">Path</span></a>
+      <p>Independent guidance for navigating online patient portals including MyChart. Not affiliated with any portal provider.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="guide.html#access">MyChart Access Guide</a></li>
+        <li><a href="guide.html#recovery">Account Recovery</a></li>
+        <li><a href="guide.html#navigation">Portal Navigation</a></li>
+        <li><a href="guide.html#features">MyChart Features</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PortalPath. All rights reserved. | Independent informational resource. Not affiliated with MyChart or Epic Systems.</p>
+  </div>
+</footer>
+
+</body>
+</html>

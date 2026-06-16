@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy – PortalPath</title>
+  <meta name="description" content="Read the PortalPath Privacy Policy to understand how we handle information on our independent patient portal guidance website."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0b1f3a; --blue: #1459a8; --sky: #3b82f6; --teal: #0ea5e9;
+      --light: #f0f6ff; --white: #ffffff; --text: #1e2d3d; --muted: #5a7390; --border: #dce8f5;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); text-decoration: none; }
+    .logo span { color: var(--sky); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sky); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; }
+    .nav-cta:hover { background: var(--sky) !important; }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #133a6e 60%, #1a5fa8 100%);
+      color: var(--white); padding: 70px 5% 60px; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero-inner { max-width: 760px; position: relative; }
+    .hero-badge {
+      display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: #90c9f9; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.4rem;
+    }
+    .page-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.82); max-width: 580px; }
+    .page-hero .meta { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 1.2rem; }
+
+    /* Layout */
+    .doc-section { padding: 70px 5%; background: var(--white); }
+    .doc-layout { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: start; }
+
+    /* TOC Sidebar */
+    .toc { position: sticky; top: 90px; }
+    .toc h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); margin-bottom: 1rem; }
+    .toc ul { list-style: none; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a { font-size: 0.87rem; color: var(--muted); text-decoration: none; transition: color 0.2s; display: block; padding: 0.2rem 0; border-left: 2px solid transparent; padding-left: 0.75rem; }
+    .toc a:hover { color: var(--sky); border-left-color: var(--sky); }
+
+    /* Document body */
+    .doc-body h2 {
+      font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy);
+      margin-top: 2.5rem; margin-bottom: 0.8rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-body h2:first-child { margin-top: 0; }
+    .doc-body p { font-size: 0.95rem; color: var(--text); margin-bottom: 1rem; line-height: 1.8; }
+    .doc-body ul { margin: 0.8rem 0 1rem 1.4rem; }
+    .doc-body ul li { font-size: 0.93rem; color: var(--text); margin-bottom: 0.4rem; line-height: 1.7; }
+    .doc-body a { color: var(--sky); text-decoration: none; }
+    .doc-body a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--light); border: 1px solid var(--border); border-radius: 10px;
+      padding: 1.3rem 1.5rem; margin: 1.5rem 0; font-size: 0.92rem; color: var(--muted);
+    }
+    .highlight-box strong { color: var(--navy); display: block; margin-bottom: 0.3rem; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 3rem 5%; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .footer-brand .logo { color: var(--white); font-size: 1.3rem; display: block; margin-bottom: 0.6rem; }
+    .footer-brand p { font-size: 0.85rem; max-width: 260px; }
+    .footer-links h4 { color: var(--white); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 0.4rem; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--sky); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2.5rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; }
+
+    @media (max-width: 750px) {
+      .nav-links { display: none; }
+      .doc-layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Portal<span>Path</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="guide.html">Guide</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="guide.html" class="nav-cta">Get Help</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="hero-badge">🔒 Legal</span>
+    <h1>Privacy Policy</h1>
+    <p>We believe in full transparency about how our website works and what — if any — information we collect from visitors.</p>
+    <p class="meta">Last Updated: January 1, 2025</p>
+  </div>
+</div>
+
+<section class="doc-section">
+  <div class="doc-layout">
+
+    <nav class="toc" aria-label="Table of Contents">
+      <h4>On This Page</h4>
+      <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#information">Information We Collect</a></li>
+        <li><a href="#usage">How We Use Information</a></li>
+        <li><a href="#cookies">Cookies & Analytics</a></li>
+        <li><a href="#third-party">Third-Party Services</a></li>
+        <li><a href="#data-sharing">Data Sharing</a></li>
+        <li><a href="#children">Children's Privacy</a></li>
+        <li><a href="#rights">Your Rights</a></li>
+        <li><a href="#changes">Policy Changes</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="doc-body">
+
+      <div class="highlight-box">
+        <strong>The Short Version</strong>
+        PortalPath is an informational website. We do not collect personal health information, we do not require account creation, and we do not sell your data to third parties. This policy explains the limited data practices of our site.
+      </div>
+
+      <h2 id="overview">1. Overview</h2>
+      <p>PortalPath ("we," "our," or "us") operates the website at portalpath.com. We are committed to protecting the privacy of all visitors. This Privacy Policy explains what information we may collect when you visit our site, how we use it, and your rights regarding that information.</p>
+      <p>PortalPath is an independent informational resource and is not affiliated with MyChart, Epic Systems, or any healthcare organization. We do not handle personal health records, patient data, or any medical information.</p>
+
+      <h2 id="information">2. Information We Collect</h2>
+      <p>We collect only the minimum information necessary to operate and improve our website. This falls into two categories:</p>
+      <ul>
+        <li><strong>Information you provide voluntarily:</strong> If you submit our contact form, you may provide your name, email address, and a message. This is entirely optional and only used to respond to your inquiry.</li>
+        <li><strong>Information collected automatically:</strong> Like most websites, our servers may log standard technical data such as your browser type, operating system, referring URL, pages visited, and the date and time of your visit. This data does not identify you personally.</li>
+      </ul>
+      <p>We do not collect, store, or request any health-related information, account credentials, or financial data.</p>
+
+      <h2 id="usage">3. How We Use Information</h2>
+      <p>Any information we collect is used solely for the following purposes:</p>
+      <ul>
+        <li>To respond to questions or messages submitted via our contact form</li>
+        <li>To monitor and improve the performance and usability of our website</li>
+        <li>To understand general traffic patterns and popular content areas</li>
+        <li>To ensure the security and integrity of our website</li>
+      </ul>
+      <p>We do not use your information for marketing purposes, and we do not build personal profiles about our visitors.</p>
+
+      <h2 id="cookies">4. Cookies &amp; Analytics</h2>
+      <p>Our website may use cookies — small text files stored in your browser — to help us understand how visitors use the site. We may use a third-party analytics service such as Google Analytics to gather aggregated, anonymized data about page visits and user behavior.</p>
+      <p>This data is aggregated and does not identify you as an individual. You can opt out of Google Analytics tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>. You can also configure your browser to refuse cookies, though some features of the site may not function as intended.</p>
+
+      <h2 id="third-party">5. Third-Party Services</h2>
+      <p>Our website may link to external websites, including official healthcare provider portals, MyChart login pages, or support resources. We are not responsible for the privacy practices of any third-party websites. We encourage you to review the privacy policies of any external sites you visit.</p>
+      <p>We use Google Fonts to serve typography on our pages. Google may collect limited data in connection with font delivery; please refer to <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a> for details.</p>
+
+      <h2 id="data-sharing">6. Data Sharing</h2>
+      <p>We do not sell, rent, trade, or otherwise share your personal information with third parties for commercial purposes. We may disclose information only in the following limited circumstances:</p>
+      <ul>
+        <li>When required by law or a valid legal process</li>
+        <li>To protect the rights, property, or safety of PortalPath or its users</li>
+        <li>With service providers who assist in operating our website, under strict confidentiality obligations</li>
+      </ul>
+
+      <h2 id="children">7. Children's Privacy</h2>
+      <p>Our website is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has submitted personal information through our site, please contact us and we will promptly delete it.</p>
+
+      <h2 id="rights">8. Your Rights</h2>
+      <p>Depending on your location, you may have certain rights regarding your personal data, including the right to access, correct, or request deletion of information we hold about you. To exercise any of these rights, please contact us using the details below. We will respond within a reasonable timeframe.</p>
+
+      <h2 id="changes">9. Policy Changes</h2>
+      <p>We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements. When we do, we will update the "Last Updated" date at the top of this page. Continued use of our website after any changes constitutes your acceptance of the revised policy.</p>
+
+      <h2 id="contact">10. Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy or our data practices, please reach out to us through our <a href="contact.html">contact page</a>. We are committed to addressing your questions promptly and transparently.</p>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">Portal<span style="color:#7ec8f4">Path</span></a>
+      <p>Independent guidance for navigating online patient portals including MyChart. Not affiliated with any portal provider.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="guide.html#access">MyChart Access Guide</a></li>
+        <li><a href="guide.html#recovery">Account Recovery</a></li>
+        <li><a href="guide.html#navigation">Portal Navigation</a></li>
+        <li><a href="guide.html#features">MyChart Features</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PortalPath. All rights reserved. | Independent informational resource. Not affiliated with MyChart or Epic Systems.</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Terms of Use – PortalPath</title>
+  <meta name="description" content="Read the PortalPath Terms of Use governing access to and use of our independent patient portal guidance website."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0b1f3a; --blue: #1459a8; --sky: #3b82f6; --teal: #0ea5e9;
+      --light: #f0f6ff; --white: #ffffff; --text: #1e2d3d; --muted: #5a7390; --border: #dce8f5;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); text-decoration: none; }
+    .logo span { color: var(--sky); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sky); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; }
+    .nav-cta:hover { background: var(--sky) !important; }
+
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #133a6e 60%, #1a5fa8 100%);
+      color: var(--white); padding: 70px 5% 60px; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero-inner { max-width: 760px; position: relative; }
+    .hero-badge {
+      display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: #90c9f9; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.4rem;
+    }
+    .page-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.82); max-width: 580px; }
+    .page-hero .meta { font-size: 0.85rem; color: rgba(255,255,255,0.55); margin-top: 1.2rem; }
+
+    .doc-section { padding: 70px 5%; background: var(--white); }
+    .doc-layout { display: grid; grid-template-columns: 220px 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: start; }
+
+    .toc { position: sticky; top: 90px; }
+    .toc h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky); margin-bottom: 1rem; }
+    .toc ul { list-style: none; }
+    .toc li { margin-bottom: 0.3rem; }
+    .toc a { font-size: 0.87rem; color: var(--muted); text-decoration: none; transition: color 0.2s; display: block; padding: 0.2rem 0 0.2rem 0.75rem; border-left: 2px solid transparent; }
+    .toc a:hover { color: var(--sky); border-left-color: var(--sky); }
+
+    .doc-body h2 {
+      font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy);
+      margin-top: 2.5rem; margin-bottom: 0.8rem; padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .doc-body h2:first-child { margin-top: 0; }
+    .doc-body p { font-size: 0.95rem; color: var(--text); margin-bottom: 1rem; line-height: 1.8; }
+    .doc-body ul { margin: 0.8rem 0 1rem 1.4rem; }
+    .doc-body ul li { font-size: 0.93rem; color: var(--text); margin-bottom: 0.4rem; line-height: 1.7; }
+    .doc-body a { color: var(--sky); text-decoration: none; }
+    .doc-body a:hover { text-decoration: underline; }
+
+    .highlight-box {
+      background: var(--light); border: 1px solid var(--border); border-radius: 10px;
+      padding: 1.3rem 1.5rem; margin: 1.5rem 0; font-size: 0.92rem; color: var(--muted);
+    }
+    .highlight-box strong { color: var(--navy); display: block; margin-bottom: 0.3rem; }
+
+    .warning-box {
+      background: #fff8e6; border: 1px solid #f5d97a; border-radius: 10px;
+      padding: 1.3rem 1.5rem; margin: 1.5rem 0; font-size: 0.92rem; color: #7a5500;
+    }
+    .warning-box strong { display: block; margin-bottom: 0.3rem; }
+
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 3rem 5%; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .footer-brand .logo { color: var(--white); font-size: 1.3rem; display: block; margin-bottom: 0.6rem; }
+    .footer-brand p { font-size: 0.85rem; max-width: 260px; }
+    .footer-links h4 { color: var(--white); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 0.4rem; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--sky); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2.5rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; }
+
+    @media (max-width: 750px) {
+      .nav-links { display: none; }
+      .doc-layout { grid-template-columns: 1fr; }
+      .toc { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Portal<span>Path</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="guide.html">Guide</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="guide.html" class="nav-cta">Get Help</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="hero-badge">📄 Legal</span>
+    <h1>Terms of Use</h1>
+    <p>Please read these terms carefully before using the PortalPath website. By accessing our site, you agree to be bound by these terms.</p>
+    <p class="meta">Last Updated: January 1, 2025</p>
+  </div>
+</div>
+
+<section class="doc-section">
+  <div class="doc-layout">
+
+    <nav class="toc" aria-label="Table of Contents">
+      <h4>On This Page</h4>
+      <ul>
+        <li><a href="#acceptance">Acceptance of Terms</a></li>
+        <li><a href="#about">About PortalPath</a></li>
+        <li><a href="#informational">Informational Use Only</a></li>
+        <li><a href="#no-affiliation">No Affiliation</a></li>
+        <li><a href="#use">Permitted Use</a></li>
+        <li><a href="#prohibited">Prohibited Conduct</a></li>
+        <li><a href="#ip">Intellectual Property</a></li>
+        <li><a href="#disclaimer">Disclaimer of Warranties</a></li>
+        <li><a href="#liability">Limitation of Liability</a></li>
+        <li><a href="#links">Third-Party Links</a></li>
+        <li><a href="#changes">Changes to Terms</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="doc-body">
+
+      <div class="highlight-box">
+        <strong>Plain Language Summary</strong>
+        PortalPath provides free, general information about patient portals. We are not doctors, not affiliated with MyChart, and not a substitute for official support. Use our content as a starting point, not as medical or legal advice.
+      </div>
+
+      <h2 id="acceptance">1. Acceptance of Terms</h2>
+      <p>By accessing or using the PortalPath website ("Site"), you agree to be bound by these Terms of Use ("Terms"). If you do not agree with any part of these Terms, please do not use our Site. These Terms apply to all visitors and users of the Site.</p>
+
+      <h2 id="about">2. About PortalPath</h2>
+      <p>PortalPath is an independent, informational website that provides general guidance on how to access, navigate, and use online patient portals, including MyChart. Our mission is to help everyday users understand patient portal interfaces in plain, accessible language.</p>
+      <p>PortalPath is operated independently and is not a healthcare provider, medical organization, technology company, or portal operator.</p>
+
+      <h2 id="informational">3. Informational Use Only</h2>
+      <p>All content on PortalPath is provided for <strong>general informational purposes only</strong>. Nothing on this Site constitutes medical advice, legal advice, technical support, or professional guidance of any kind.</p>
+
+      <div class="warning-box">
+        <strong>⚠️ Important</strong>
+        Do not rely on PortalPath content for any medical decisions, diagnosis, or treatment. Always consult a qualified healthcare professional for medical questions. For account-specific issues with your patient portal, contact your healthcare provider's support team directly.
+      </div>
+
+      <p>The information provided may not be current, complete, or applicable to your specific situation. We make no guarantees about the accuracy, completeness, or suitability of any content on our Site.</p>
+
+      <h2 id="no-affiliation">4. No Affiliation</h2>
+      <p>PortalPath is <strong>not affiliated with, endorsed by, sponsored by, or connected to</strong> any of the following:</p>
+      <ul>
+        <li>MyChart or Epic Systems Corporation</li>
+        <li>Any hospital, clinic, or healthcare organization</li>
+        <li>Any patient portal provider or health technology company</li>
+        <li>Any government health agency or regulatory body</li>
+      </ul>
+      <p>Use of names such as "MyChart" on this Site is for descriptive and informational purposes only, referring to widely used patient portal platforms. All trademarks and brand names remain the property of their respective owners.</p>
+
+      <h2 id="use">5. Permitted Use</h2>
+      <p>You may access and use the Site for your own personal, non-commercial, informational purposes. You may share links to our content, provided you do so accurately and without suggesting an endorsement or affiliation that does not exist.</p>
+
+      <h2 id="prohibited">6. Prohibited Conduct</h2>
+      <p>When using the Site, you agree not to:</p>
+      <ul>
+        <li>Use the Site for any unlawful purpose or in violation of these Terms</li>
+        <li>Attempt to gain unauthorized access to any part of the Site or its systems</li>
+        <li>Reproduce, distribute, or commercially exploit any content from the Site without permission</li>
+        <li>Misrepresent your affiliation with PortalPath or any healthcare organization</li>
+        <li>Scrape, crawl, or use automated tools to harvest data from the Site</li>
+        <li>Transmit malware, spam, or any harmful code through or to the Site</li>
+      </ul>
+
+      <h2 id="ip">7. Intellectual Property</h2>
+      <p>All original content, text, design, and materials on the PortalPath website are the property of PortalPath and are protected by applicable intellectual property laws. You may not copy, reproduce, republish, or distribute our content for commercial purposes without prior written permission.</p>
+      <p>Third-party brand names, trademarks, and service marks referenced on this Site remain the property of their respective owners and are used here solely for descriptive, informational purposes.</p>
+
+      <h2 id="disclaimer">8. Disclaimer of Warranties</h2>
+      <p>The Site and all content are provided on an <strong>"as is" and "as available" basis</strong>, without warranties of any kind, either express or implied. PortalPath makes no representations or warranties regarding the accuracy, reliability, completeness, or timeliness of any content on the Site.</p>
+      <p>We do not warrant that the Site will be uninterrupted, error-free, or free of viruses or other harmful components. Use of the Site is at your own risk.</p>
+
+      <h2 id="liability">9. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by law, PortalPath and its operators shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from your use of — or inability to use — the Site or its content. This includes, without limitation, any loss of data, loss of profits, or harm resulting from reliance on information found on the Site.</p>
+
+      <h2 id="links">10. Third-Party Links</h2>
+      <p>Our Site may contain links to external websites, including official healthcare provider portals, MyChart login pages, and support resources. These links are provided for your convenience only. PortalPath does not control, endorse, or take responsibility for the content, privacy practices, or availability of any third-party websites. Visiting external links is at your own discretion and risk.</p>
+
+      <h2 id="changes">11. Changes to These Terms</h2>
+      <p>We reserve the right to update or modify these Terms at any time. Changes will be reflected by updating the "Last Updated" date at the top of this page. Your continued use of the Site following any changes constitutes your acceptance of the revised Terms. We encourage you to review this page periodically.</p>
+
+      <h2 id="contact">12. Contact Us</h2>
+      <p>If you have questions about these Terms of Use, please contact us through our <a href="contact.html">contact page</a>. We aim to respond to all inquiries within a reasonable timeframe.</p>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">Portal<span style="color:#7ec8f4">Path</span></a>
+      <p>Independent guidance for navigating online patient portals including MyChart. Not affiliated with any portal provider.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="guide.html#access">MyChart Access Guide</a></li>
+        <li><a href="guide.html#recovery">Account Recovery</a></li>
+        <li><a href="guide.html#navigation">Portal Navigation</a></li>
+        <li><a href="guide.html#features">MyChart Features</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PortalPath. All rights reserved. | Independent informational resource. Not affiliated with MyChart or Epic Systems.</p>
+  </div>
+</footer>
+
+</body>
+</html>

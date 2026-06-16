@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us – PortalPath</title>
+  <meta name="description" content="Have a question about MyChart or patient portals? Reach out to PortalPath for general guidance and informational support."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #0b1f3a; --blue: #1459a8; --sky: #3b82f6; --teal: #0ea5e9;
+      --light: #f0f6ff; --white: #ffffff; --text: #1e2d3d; --muted: #5a7390; --border: #dce8f5;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'DM Sans', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; }
+
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%; display: flex; align-items: center; justify-content: space-between; height: 68px;
+    }
+    .logo { font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: var(--navy); text-decoration: none; }
+    .logo span { color: var(--sky); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-weight: 500; font-size: 0.92rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--sky); }
+    .nav-links a.active { color: var(--sky); }
+    .nav-cta { background: var(--blue); color: var(--white) !important; padding: 0.45rem 1.1rem; border-radius: 6px; }
+    .nav-cta:hover { background: var(--sky) !important; }
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #133a6e 60%, #1a5fa8 100%);
+      color: var(--white); padding: 70px 5% 60px; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero-inner { max-width: 760px; position: relative; }
+    .hero-badge {
+      display: inline-block; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+      color: #90c9f9; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.9rem; border-radius: 20px; margin-bottom: 1.4rem;
+    }
+    .page-hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 1rem; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.82); max-width: 580px; }
+
+    /* Main content */
+    .contact-section { padding: 70px 5%; background: var(--white); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1.4fr; gap: 4rem; max-width: 1000px; margin: 0 auto; }
+
+    .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--sky); margin-bottom: 0.6rem; }
+    h2 { font-family: 'DM Serif Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
+
+    .contact-info p { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; line-height: 1.8; }
+
+    .info-card {
+      background: var(--light); border: 1px solid var(--border); border-radius: 12px; padding: 1.4rem 1.6rem; margin-bottom: 1rem;
+      display: flex; align-items: flex-start; gap: 1rem;
+    }
+    .info-card-icon { font-size: 1.3rem; margin-top: 0.1rem; flex-shrink: 0; }
+    .info-card h4 { font-size: 0.92rem; font-weight: 600; color: var(--navy); margin-bottom: 0.2rem; }
+    .info-card p { font-size: 0.88rem; color: var(--muted); margin: 0; }
+
+    .disclaimer-note {
+      background: #fff8e6; border: 1px solid #f5d97a; border-radius: 10px;
+      padding: 1.2rem 1.4rem; margin-top: 1.5rem;
+    }
+    .disclaimer-note strong { color: #7a5500; font-size: 0.88rem; display: block; margin-bottom: 0.3rem; }
+    .disclaimer-note p { font-size: 0.84rem; color: #7a5500; margin: 0; }
+
+    /* Form */
+    .contact-form-wrap { background: var(--white); border: 1px solid var(--border); border-radius: 14px; padding: 2.5rem; box-shadow: 0 4px 24px rgba(20,89,168,0.07); }
+    .form-group { margin-bottom: 1.4rem; }
+    .form-group label { display: block; font-size: 0.88rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 0.75rem 1rem; border: 1.5px solid var(--border); border-radius: 8px;
+      font-family: 'DM Sans', sans-serif; font-size: 0.93rem; color: var(--text); background: var(--white);
+      transition: border-color 0.2s, box-shadow 0.2s; outline: none;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--sky); box-shadow: 0 0 0 3px rgba(59,130,246,0.12);
+    }
+    .form-group textarea { resize: vertical; min-height: 130px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+    .btn-submit {
+      width: 100%; background: var(--blue); color: var(--white); padding: 0.85rem 2rem;
+      border: none; border-radius: 8px; font-family: 'DM Sans', sans-serif;
+      font-weight: 600; font-size: 0.95rem; cursor: pointer; transition: background 0.2s, transform 0.15s;
+    }
+    .btn-submit:hover { background: var(--sky); transform: translateY(-1px); }
+
+    .success-msg {
+      display: none; background: #edfaf3; border: 1px solid #6ee7b7; border-radius: 8px;
+      padding: 1rem 1.2rem; margin-top: 1rem; font-size: 0.9rem; color: #065f46;
+    }
+
+    /* Footer */
+    footer { background: var(--navy); color: rgba(255,255,255,0.6); padding: 3rem 5%; }
+    .footer-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .footer-brand .logo { color: var(--white); font-size: 1.3rem; display: block; margin-bottom: 0.6rem; }
+    .footer-brand p { font-size: 0.85rem; max-width: 260px; }
+    .footer-links h4 { color: var(--white); font-size: 0.9rem; margin-bottom: 0.8rem; }
+    .footer-links ul { list-style: none; }
+    .footer-links li { margin-bottom: 0.4rem; }
+    .footer-links a { color: rgba(255,255,255,0.6); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--sky); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 2.5rem; padding-top: 1.5rem; text-align: center; font-size: 0.82rem; }
+
+    @media (max-width: 750px) {
+      .nav-links { display: none; }
+      .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">Portal<span>Path</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="guide.html">Guide</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+    <li><a href="guide.html" class="nav-cta">Get Help</a></li>
+  </ul>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-inner">
+    <span class="hero-badge">✉️ Get In Touch</span>
+    <h1>Contact PortalPath</h1>
+    <p>Have a question about navigating a patient portal or using MyChart? Send us a message and we'll respond with general guidance.</p>
+  </div>
+</div>
+
+<section class="contact-section">
+  <div class="contact-layout">
+
+    <div class="contact-info">
+      <div class="section-label">Reach Out</div>
+      <h2>We're Here to Help</h2>
+      <p>PortalPath is an independent informational resource. We can answer general questions about patient portals and MyChart navigation — but we cannot access your account or provide technical support on behalf of any healthcare organization.</p>
+
+      <div class="info-card">
+        <div class="info-card-icon">📬</div>
+        <div>
+          <h4>General Inquiries</h4>
+          <p>Questions about our guides, website content, or how to use a patient portal.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-icon">🕐</div>
+        <div>
+          <h4>Response Time</h4>
+          <p>We typically respond to messages within 1–2 business days.</p>
+        </div>
+      </div>
+
+      <div class="info-card">
+        <div class="info-card-icon">🌐</div>
+        <div>
+          <h4>Self-Service Resources</h4>
+          <p>For faster help, browse our <a href="guide.html" style="color:var(--sky);">step-by-step Guide</a> — most answers are already there.</p>
+        </div>
+      </div>
+
+      <div class="disclaimer-note">
+        <strong>⚠️ Please Note</strong>
+        <p>We are not affiliated with MyChart, Epic Systems, or any healthcare provider. We cannot access patient records, reset passwords, or provide account-level support. For direct account help, please contact your healthcare provider's IT or patient support team.</p>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap">
+      <div class="section-label">Send a Message</div>
+      <h2 style="font-size:1.5rem; margin-bottom:1.5rem;">Contact Form</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" placeholder="Jane" />
+        </div>
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" placeholder="Smith" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="jane@example.com" />
+      </div>
+
+      <div class="form-group">
+        <label for="topic">Topic</label>
+        <select id="topic">
+          <option value="">Select a topic…</option>
+          <option>MyChart Access Help</option>
+          <option>Account Recovery Questions</option>
+          <option>Portal Navigation</option>
+          <option>Understanding MyChart Features</option>
+          <option>Website Feedback</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message</label>
+        <textarea id="message" placeholder="Describe your question or what you need help understanding…"></textarea>
+      </div>
+
+      <button class="btn-submit" onclick="handleSubmit()">Send Message</button>
+
+      <div class="success-msg" id="successMsg">
+        ✅ Thank you for reaching out! We've received your message and will reply within 1–2 business days.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a class="logo" href="index.html">Portal<span style="color:#7ec8f4">Path</span></a>
+      <p>Independent guidance for navigating online patient portals including MyChart. Not affiliated with any portal provider.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="guide.html">Guide</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="terms.html">Terms of Use</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Topics</h4>
+      <ul>
+        <li><a href="guide.html#access">MyChart Access Guide</a></li>
+        <li><a href="guide.html#recovery">Account Recovery</a></li>
+        <li><a href="guide.html#navigation">Portal Navigation</a></li>
+        <li><a href="guide.html#features">MyChart Features</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 PortalPath. All rights reserved. | Independent informational resource. Not affiliated with MyChart or Epic Systems.</p>
+  </div>
+</footer>
+
+<script>
+  function handleSubmit() {
+    const fname = document.getElementById('fname').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!fname || !email || !message) {
+      alert('Please fill in your name, email, and message before submitting.');
+      return;
+    }
+    document.getElementById('successMsg').style.display = 'block';
+    document.querySelector('.btn-submit').disabled = true;
+    document.querySelector('.btn-submit').textContent = 'Message Sent';
+    document.querySelector('.btn-submit').style.background = '#059669';
+  }
+</script>
+
+</body>
+</html>
